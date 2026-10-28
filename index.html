@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171717">
+<title>Patente B বাংলা — GitHub Quiz + Segnali</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;color:#f4f4f5;background:#171717}
+*{box-sizing:border-box}body{margin:0;background:#171717;color:#f4f4f5}button,input,select{font:inherit}
+header{position:sticky;top:0;z-index:5;background:#101012;border-bottom:1px solid #303033;padding:15px 16px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:1.25rem;font-weight:750;letter-spacing:.2px}.sub{font-size:.78rem;color:#b7b7bd;margin-top:3px}
+main{max-width:1000px;margin:auto;padding:15px 14px 34px}
+.banner{background:linear-gradient(120deg,#57244b,#233e71);border-radius:14px;padding:18px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:100px}
+.banner h1{font-size:1.25rem;line-height:1.45;margin:0 0 5px}.banner p{margin:0;color:#e3e3ed;font-size:.9rem}.banner .big{font-size:2.4rem}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:22px 2px 12px}.section-head h2{font-size:1.12rem;margin:0}.section-head small{color:#a1a1aa}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{border:1px solid #29292d;border-radius:25px;background:#202022;box-shadow:5px 6px 0 #101012,-2px -2px 6px #29292d;padding:18px 10px;min-height:145px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#f4f4f5;cursor:pointer}
+.card:active{transform:scale(.985)}.emoji{font-size:2.45rem;line-height:1.2}.card strong{font-size:1.02rem}.card span:last-child{font-size:.83rem;color:#c5c5ca}
+.primary{background:#2757a5!important;border-color:#2757a5!important;color:white!important}
+.panel{background:#202022;border:1px solid #333338;border-radius:16px;padding:15px;margin-top:14px}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+input,select,button.action{border:1px solid #44444b;background:#171719;color:#f4f4f5;border-radius:10px;padding:11px;width:100%;min-width:0}
+button.action{cursor:pointer;font-weight:650}.question{font-size:1.15rem;line-height:1.65;margin:13px 0}.muted{color:#a1a1aa;font-size:.86rem;line-height:1.55}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answers button{padding:14px;font-weight:750}.feedback{padding:12px;border-radius:10px;background:#2a303a;margin-top:10px;line-height:1.6}
+.progress-wrap{height:10px;border-radius:99px;background:#3a3a3f;overflow:hidden;margin-top:9px}.progress{height:100%;background:#3677da;width:0}
+.hidden{display:none!important}.exam-head{background:#bfe4c6;color:#202020;padding:6px 7px;border-radius:10px}.exam-head .exam-title{font-size:1rem;font-weight:800;margin:0 0 5px}.exam-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.exam-groups button,.exam-numbers button{background:#f5f5f5;color:#222;border:0;border-radius:5px;padding:4px 2px;font-size:.78rem;line-height:1.2}.exam-groups button.active{color:#d84a45}.exam-numbers{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;margin-top:5px}.exam-numbers button{padding:4px 0;font-size:.82rem}.exam-numbers button.active{background:#dce9ff;outline:2px solid #4774d7}.exam-numbers button.done{background:#bfe4c6}.exam-question{background:#fff;color:#222;padding:22px 15px;min-height:350px;border-radius:8px;text-align:center}.exam-question .qtext{font-size:1.25rem;line-height:1.65;margin:25px 0}.exam-translation{color:#444;font-size:1.05rem;line-height:1.65}.exam-controls{background:#c8e7ce;color:#222;padding:14px;border-radius:10px}.exam-controls .action{background:#e9f6eb;color:#222;border-color:#e9f6eb}.exam-controls .answers button{background:#fff;color:#222;border:2px solid #263e8a}.exam-timer{font-weight:800;font-size:1.25rem}.back{margin-bottom:12px}.topic-list{display:grid;gap:9px}.topic-row{background:#29292d;border:1px solid #414147;border-radius:11px;padding:12px;text-align:left;color:#f4f4f5;display:flex;gap:10px;align-items:center;justify-content:space-between;width:100%;cursor:pointer}.topic-row small{color:#b8b8c0;white-space:nowrap}
+footer{text-align:center;color:#888891;padding:20px 10px;font-size:.78rem}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.card{min-height:165px}.banner h1{font-size:1.5rem}}
+@media(max-width:380px){.card{min-height:130px;padding:14px 7px}.emoji{font-size:2rem}.controls{grid-template-columns:1fr}}
+</style></head><body>
+<header><div><div class="brand">🚘 Patente B বাংলা</div><div class="sub">ইতালিয়ান থিওরি • বাংলা সহায়তা</div></div><button class="action" style="width:auto" onclick="goHome()" aria-label="হোম">⌂</button></header>
+<main>
+<section id="home">
+<button class="banner" style="width:100%;text-align:left;border:0;color:#fff;cursor:pointer" onclick="openQuizBank()"><div><h1>৭,০২০টি Quiz</h1><p>অধ্যায়ভিত্তিক প্রশ্ন অনুশীলন</p><div style="margin-top:12px;font-weight:750;font-size:1.05rem">📖 &nbsp;সবার উপরে প্রশ্নভান্ডার</div></div></button>
+<div class="grid">
+<button class="card" onclick="startExam()"><span class="emoji">💻</span><strong>Test</strong><span>কুইজ পরীক্ষা</span></button>
+<button class="card" onclick="openQuizBank()"><span class="emoji">🎓</span><strong>Argomenti</strong><span>অধ্যায়সমূহ</span></button>
+<button class="card" onclick="openSigns()"><span class="emoji">🚧</span><strong>Cartelli</strong><span>ট্রাফিক সাইন</span></button>
+<button class="card" onclick="openFeature('Manuale','📚','থিওরি বইয়ের আলাদা বিভাগ। পরে PDF বা অন্যান্য বই যুক্ত করা হবে।')"><span class="emoji">📚</span><strong>Manuale</strong><span>থিওরি বই</span></button>
+<button class="card" onclick="openFeature('Dizionario','🔤','ইতালীয়-বাংলা শব্দকোষ। পরে শব্দতালিকা ও ফাইল যুক্ত করা হবে।')"><span class="emoji">🔤</span><strong>Dizionario</strong><span>অভিধান</span></button>
+<button class="card" onclick="openFeature('Statistiche','📊','প্রশ্নের উত্তর ও ফলাফলের পরিসংখ্যান।')"><span class="emoji">📊</span><strong>Statistiche</strong><span>পরিসংখ্যান</span></button>
+<button class="card" onclick="openFeature('Supporto','🙋','সহায়তার বিভাগ। পরে নির্দেশনা ও যোগাযোগের তথ্য যুক্ত করা হবে।')"><span class="emoji">🙋</span><strong>Supporto</strong><span>সহায়তা</span></button>
+<button class="card" onclick="openFeature('Impostazioni','⚙️','সেটিংসের বিভাগ। পরে পছন্দ ও অন্যান্য সেটিংস যুক্ত করা হবে।')"><span class="emoji">⚙️</span><strong>Impostazioni</strong><span>সেটিংস</span></button>
+</div>
+<div style="text-align:center;color:#a1a1aa;font-size:.82rem;margin:18px 0 4px">এটি হোমপেজের নমুনা ডিজাইন, লাইভ ওয়েবসাইট নয়।</div>
+</section>
+<section id="quizBank" class="hidden">
+<button class="action back" onclick="goHome()">← হোমপেজে ফিরে যাও</button>
+<div class="section-head"><h2>📖 আলাদা প্রশ্নভান্ডার</h2><small>৭,০২০ প্রশ্ন</small></div>
+<div class="panel"><p class="muted">২৫টি অধ্যায় থেকে একটি বেছে নাও। এই প্রশ্নভান্ডার হোমপেজের অন্য ফিচার থেকে আলাদা রাখা হয়েছে।</p><div class="controls"><input id="chapterSearch" placeholder="অধ্যায় খুঁজুন…"><button class="action primary" onclick="openAllQuiz()">সব প্রশ্ন অনুশীলন</button></div><div id="chapters" class="topic-list"></div></div>
+</section>
+<section id="quizView" class="hidden">
+<button class="action back" onclick="goHome()">← হোমপেজে ফিরে যাও</button>
+<div class="panel"><div class="muted" id="quizMeta"></div><div class="progress-wrap"><div class="progress" id="quizProgress"></div></div><div id="questionImage" style="text-align:center;margin:10px 0"></div><div class="question" id="question"></div><div class="muted" id="translation">বাংলা অনুবাদ লোড হচ্ছে…</div><div class="feedback" id="explanationBox" style="margin-top:10px;background:#243044"><b>বাংলা ব্যাখ্যা</b><div id="explanationText" style="margin-top:6px">প্রশ্নের অনুবাদ ও ব্যাখ্যা লোড হচ্ছে…</div></div><div class="answers" style="margin-top:14px"><button class="action" id="trueBtn" onclick="answer(true)">VERO — সত্য</button><button class="action" id="falseBtn" onclick="answer(false)">FALSO — মিথ্যা</button></div><div class="feedback hidden" id="feedback"></div><div class="controls" style="margin-top:12px"><button class="action" onclick="showAnswer()">উত্তর দেখুন</button><button class="action primary" onclick="nextQuestion()">পরের প্রশ্ন →</button></div></div>
+</section>
+<section id="examView" class="hidden">
+<button class="action back" onclick="goHome()">← হোমপেজে ফিরে যাও</button>
+<div class="exam-head"><div class="exam-title">Tmm Patente — পরীক্ষা</div><div class="exam-groups"><button onclick="jumpExamGroup(0)" id="group0">Domande 1–10</button><button onclick="jumpExamGroup(1)" id="group1">Domande 11–20</button><button onclick="jumpExamGroup(2)" id="group2">Domande 21–30</button></div><div class="exam-numbers" id="examNumbers"></div></div>
+<div class="exam-question" style="margin-top:8px"><div id="examImage"></div><div class="qtext" id="examItalian"></div><div class="exam-translation" id="examBangla"></div><div id="examExplanation" style="display:none;text-align:left;margin:14px 0 0;padding:10px;background:#eef4ff;border-radius:8px;color:#26334b;line-height:1.6"></div></div>
+<div class="exam-controls" style="margin-top:8px"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><div class="exam-timer" id="examTimer">20:00</div><small>সময় বাকি</small></div><div style="text-align:right"><b id="examProgress">প্রশ্ন ১ / ৩০</b><div><small>সঠিক উত্তর পরীক্ষা শেষে দেখানো হবে</small></div></div></div><div class="answers" style="margin-top:14px"><button class="action" onclick="examAnswer(true)">VERO</button><button class="action" onclick="examAnswer(false)">FALSO</button></div><div class="controls" style="margin-top:12px"><button class="action" onclick="examMove(-1)">◁ Indietro</button><button class="action" onclick="examMove(1)">Avanti ▷</button></div><button class="action primary" style="margin-top:10px" onclick="finishExam(false)">পরীক্ষা শেষ করুন</button></div>
+<div id="examResult" class="panel hidden"></div>
+</section>
+<section id="signsView" class="hidden">
+<button class="action back" onclick="goHome()">← হোমপেজে ফিরে যাও</button>
+<div class="panel"><h2>🚧 Cartelli — ট্রাফিক সাইন</h2><p class="muted">GitHub-এর img_sign ফোল্ডার থেকে পাওয়া অনন্য ছবিগুলো। একটি ছবিতে চাপ দিলে সেই ছবিসহ প্রশ্ন অনুশীলন করতে পারবে। প্রস্তুত প্রশ্নে বাংলা অনুবাদ ও ব্যাখ্যা দেখা যাবে।</p>
+<input id="signSearch" placeholder="সাইন বা অধ্যায় খুঁজুন…" oninput="renderSigns()">
+<div id="signGallery" class="sign-gallery" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px"></div>
+</div></section>
+<section id="featureView" class="hidden"><button class="action back" onclick="goHome()">← হোমপেজে ফিরে যাও</button><div class="panel"><div style="font-size:2.6rem" id="featureIcon">📘</div><h2 id="featureTitle"></h2><p id="featureDescription" class="muted"></p><button class="action primary" onclick="openAllQuiz()">কুইজ অনুশীলন শুরু</button></div></section>
+</main><footer>শিক্ষামূলক অনুশীলন • সরকারি ওয়েবসাইট নয় • উৎস: Ed0ardo/QuizPatenteB (dataset aggiornato al 2023) • বাংলা অনুবাদ ও ব্যাখ্যা ধাপে ধাপে যুক্ত হচ্ছে • অনুবাদ যাচাই প্রয়োজন</footer>
+<script>
+let ALL_QUESTIONS = [];
+const BN_HELP_BY_QUESTION = [{"question_it": "Il segnale raffigurato preavvisa confine di Stato con un Paese che fa parte dell'Unione Europea", "question_bn": "চিত্রে দেখানো সাইনটি ইউরোপীয় ইউনিয়নের সদস্য কোনো দেশের সঙ্গে রাষ্ট্রসীমা সামনে রয়েছে বলে আগাম জানায়।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। এই সাইনটি সীমান্তের আগাম তথ্য দেয় এবং গন্তব্য দেশের পরিচয়/সীমান্তের প্রসঙ্গ জানায়। এখানে মূল শব্দ “preavvisa” অর্থ আগে থেকে সতর্ক বা তথ্য জানায়; এটি নিজে থামার নির্দেশ নয়।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato è posto sulle strade che portano al confine di Stato con un Paese dell'Unione Europea", "question_bn": "চিত্রে দেখানো সাইনটি ইউরোপীয় ইউনিয়নের কোনো দেশের সঙ্গে রাষ্ট্রসীমায় যাওয়া সড়কে বসানো হয়।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। এই বক্তব্য সাইনটির অবস্থান সম্পর্কে: সীমান্তে যাওয়া সড়কে এটি ব্যবহার করা হয়। “è posto sulle strade che portano” মানে “যে সড়কগুলো সীমান্তে নিয়ে যায়, সেগুলোতে বসানো হয়”।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato preavvisa la distanza dal confine con uno Stato che fa parte dell'Unione Europea", "question_bn": "চিত্রে দেখানো সাইনটি ইউরোপীয় ইউনিয়নের সদস্য কোনো দেশের সীমান্ত পর্যন্ত দূরত্ব আগাম জানায়।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। প্রশ্নে সাইনটির কাজকে সীমান্ত পর্যন্ত দূরত্বের আগাম তথ্য হিসেবে বর্ণনা করা হয়েছে। “distanza dal confine” মানে সীমান্ত পর্যন্ত দূরত্ব। সাইনটি দেখেই স্বয়ংক্রিয়ভাবে থামতে হবে—এমন অর্থ নয়।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato non obbliga ad arrestarsi per il controllo doganale al confine di Stato", "question_bn": "চিত্রে দেখানো সাইনটি রাষ্ট্রসীমায় শুল্ক পরীক্ষার জন্য থামতে বাধ্য করে না।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। প্রশ্নের বক্তব্য হলো সাইনটি নিজে শুল্ক পরীক্ষার জন্য থামার বাধ্যবাধকতা তৈরি করে না। “non obbliga ad arrestarsi” মানে “থামতে বাধ্য করে না”। বাস্তবে সীমান্তে আলাদা নির্দেশ, নিয়ন্ত্রণ বা কর্তৃপক্ষের সংকেত থাকলে তা মানতে হবে।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato si trova in vicinanza di un posto di blocco", "question_bn": "চিত্রে দেখানো সাইনটি পুলিশি চেকপোস্টের কাছাকাছি থাকে।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। প্রশ্নটি সাইনটিকে “posto di blocco” অর্থাৎ পুলিশি চেকপোস্টের সঙ্গে যুক্ত করছে। এই সাইনটির বিষয় সীমান্ত/সীমান্ত-সংক্রান্ত তথ্য, চেকপোস্টের আগাম সংকেত নয়।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato è posto dietro ai veicoli, per indicarne la nazionalità", "question_bn": "চিত্রে দেখানো সাইনটি যানবাহনের পেছনে লাগানো হয়, যাতে গাড়িটির জাতীয়তা বোঝা যায়।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। “posto dietro ai veicoli” মানে যানবাহনের পেছনে লাগানো। প্রশ্নটি সাইনটিকে গাড়ির জাতীয়তা দেখানোর স্টিকার/চিহ্ন হিসেবে বর্ণনা করেছে; এখানে সাইনটি রাস্তার পাশে তথ্য দেওয়ার জন্য ব্যবহৃত হয়।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato è posto dietro al veicolo, per indicare che esso appartiene ad un cittadino dell'Unione Europea", "question_bn": "চিত্রে দেখানো সাইনটি গাড়ির পেছনে লাগানো হয়, যাতে বোঝা যায় গাড়িটি ইউরোপীয় ইউনিয়নের কোনো নাগরিকের মালিকানাধীন।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। সাইনটি কোনো গাড়ির মালিকের নাগরিকত্ব বা মালিকানা নির্দেশ করে না। এটি রাস্তার সীমান্ত-সংক্রান্ত তথ্য দেয়; গাড়ির পেছনে লাগানো মালিকানা-চিহ্ন নয়।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato preavvisa l'obbligo di arresto alla frontiera con uno Stato dell'Unione Europea", "question_bn": "চিত্রে দেখানো সাইনটি ইউরোপীয় ইউনিয়নের কোনো দেশের সীমান্তে থামার বাধ্যবাধকতা আগাম জানায়।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। “obbligo di arresto” মানে থামার বাধ্যবাধকতা। সাইনটি সীমান্তের তথ্য আগাম দেয়, কিন্তু নিজে থামার নির্দেশ দেয় না। থামার নির্দেশ থাকলে আলাদা বাধ্যতামূলক সাইন বা কর্তৃপক্ষের নির্দেশ থাকতে পারে।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato obbliga ad arrestarsi per il controllo doganale all'ingresso nel territorio di un Paese europeo - Segnali di indicazione", "question_bn": "চিত্রে দেখানো সাইনটি কোনো ইউরোপীয় দেশের ভূখণ্ডে প্রবেশের সময় শুল্ক পরীক্ষার জন্য থামতে বাধ্য করে।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। প্রশ্নটি বলছে সাইনটি শুল্ক পরীক্ষার জন্য থামতে বাধ্য করে; কিন্তু সাইনটির কাজ সীমান্তের আগাম তথ্য দেওয়া, থামার নির্দেশ দেওয়া নয়। “controllo doganale” অর্থ শুল্ক পরীক্ষা।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4328"}, {"question_it": "Il segnale raffigurato è posto in vicinanza di un cantiere stradale", "question_bn": "চিত্রে দেখানো সাইনটি রাস্তার কাজ চলার স্থানের কাছাকাছি বসানো হয়।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। প্রশ্নে বলা হয়েছে সাইনটি রাস্তার কাজের এলাকার কাছে থাকে। “cantiere stradale” মানে রাস্তার নির্মাণ/মেরামতের কাজের স্থান। অস্থায়ী সাইন সাধারণত কাজ চলাকালীন প্রাসঙ্গিক নির্দেশ দেয়।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4329"}, {"question_it": "Il segnale raffigurato preavvisa la direzione obbligatoria per autotreni ed autoarticolati", "question_bn": "চিত্রে দেখানো সাইনটি ট্রাক-ট্রেলার ও আর্টিকুলেটেড ট্রাকের জন্য বাধ্যতামূলক দিক নির্দেশ আগাম জানায়।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। প্রশ্নটি সাইনটিকে “autotreni ed autoarticolati”—অর্থাৎ ট্রাক-ট্রেলার এবং আর্টিকুলেটেড ট্রাক—এর জন্য বাধ্যতামূলক দিক নির্দেশের আগাম সংকেত হিসেবে বর্ণনা করছে। এই নির্দেশ নির্দিষ্ট ধরনের ভারী যানবাহনের জন্য; সব যানবাহনের জন্য ধরে নেওয়া যাবে না।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4329"}, {"question_it": "Il segnale raffigurato viene installato per il periodo di durata dei lavori stradali", "question_bn": "চিত্রে দেখানো সাইনটি রাস্তার কাজ চলার পুরো সময়ের জন্য স্থাপন করা হয়।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। “per il periodo di durata dei lavori stradali” অর্থ রাস্তার কাজ যত দিন চলে, সেই সময়ের জন্য। কাজ শেষ হলে অস্থায়ী সাইন সরানো বা পরিবর্তন করা হয়; এটি স্থায়ী নির্দেশের সমার্থক নয়।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4329"}, {"question_it": "Il segnale raffigurato preavvisa la direzione per un'area di rifornimento e sosta per mezzi pesanti", "question_bn": "চিত্রে দেখানো সাইনটি ভারী যানবাহনের জ্বালানি নেওয়া ও বিশ্রামের এলাকার দিক আগাম জানায়।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। বক্তব্যটি সাইনটিকে ভারী যানবাহনের জ্বালানি ও বিশ্রাম এলাকার দিকনির্দেশ হিসেবে চিহ্নিত করছে। কিন্তু প্রশ্নে থাকা সাইনটি রাস্তার কাজের প্রেক্ষাপটে নির্দিষ্ট যানবাহনের চলাচলের দিক নির্দেশ করে, সেবা/বিশ্রাম এলাকার তথ্য নয়।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4329"}, {"question_it": "Il segnale raffigurato obbliga tutti i veicoli a proseguire diritto", "question_bn": "চিত্রে দেখানো সাইনটি সব যানবাহনকে সোজা এগিয়ে যেতে বাধ্য করে।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। প্রশ্নে বলা হয়েছে “tutti i veicoli” অর্থ সব যানবাহন সোজা যাবে। সাইনটির নির্দেশ নির্দিষ্ট শ্রেণির ভারী যানবাহনকে লক্ষ্য করে; তাই সব যানবাহনের জন্য সোজা যাওয়ার বাধ্যবাধকতা বোঝায় না।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4329"}, {"question_it": "Il segnale raffigurato preavvisa una direzione consigliata", "question_bn": "চিত্রে দেখানো সাইনটি একটি প্রস্তাবিত দিক আগাম জানায়।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। “direzione consigliata” অর্থ প্রস্তাবিত বা পরামর্শমূলক দিক। এখানে সাইনটি পরামর্শ নয়, বরং নির্দিষ্ট যানবাহনের জন্য বাধ্যতামূলক দিক নির্দেশের আগাম তথ্য দেয়।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4329"}, {"question_it": "Il segnale raffigurato consiglia a tutti i veicoli di seguire la direzione indicata dalla freccia - Segnali di obbligo", "question_bn": "চিত্রে দেখানো সাইনটি সব যানবাহনকে তীরচিহ্নে দেখানো দিকে যাওয়ার পরামর্শ দেয়।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। প্রশ্নে বলা হয়েছে সাইনটি সব যানবাহনকে তীরের দিকে যেতে পরামর্শ দেয়। কিন্তু বক্তব্যে “tutti i veicoli” এবং “consiglia” শব্দ দুটি ভুল ধারণা তৈরি করছে: সাইনটির নির্দেশ সব যানবাহনের জন্য সাধারণ পরামর্শ নয়; এটি নির্দিষ্ট যানবাহনের বাধ্যতামূলক রুট-সংক্রান্ত নির্দেশের সঙ্গে সম্পর্কিত।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4329"}, {"question_it": "Il segnale raffigurato indica un posto di telefono pubblico nelle vicinanze", "question_bn": "চিত্রে দেখানো সাইনটি কাছাকাছি একটি পাবলিক টেলিফোনের অবস্থান নির্দেশ করে।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। সাইনটি কাছাকাছি পাবলিক টেলিফোনের সুবিধা নির্দেশ করে। “posto di telefono pubblico” মানে জনসাধারণের ব্যবহারের টেলিফোন থাকা স্থান।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica che siamo in vicinanza di un apparecchio telefonico pubblico", "question_bn": "চিত্রে দেখানো সাইনটি জানায় যে আমরা একটি পাবলিক টেলিফোনের কাছাকাছি আছি।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। বাক্যটি 21323-এর একই অর্থ বলছে: সাইনটি জানায় যে কাছাকাছি পাবলিক টেলিফোন আছে। “in vicinanza” মানে কাছাকাছি।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica la possibilità, a breve distanza, di poter telefonare da un telefono pubblico", "question_bn": "চিত্রে দেখানো সাইনটি জানায় যে অল্প দূরত্বে পাবলিক টেলিফোন থেকে ফোন করার সুযোগ রয়েছে।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। “a breve distanza” অর্থ অল্প দূরত্বে, আর “poter telefonare” মানে ফোন করার সুযোগ থাকা। সাইনটি মোবাইল রিচার্জ বা মোবাইল নেটওয়ার্কের বদলে পাবলিক টেলিফোনের সুবিধা বোঝায়।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica un apparecchio telefonico pubblico posto su strade extraurbane", "question_bn": "চিত্রে দেখানো সাইনটি শহরের বাইরের সড়কে থাকা একটি পাবলিক টেলিফোন নির্দেশ করে।", "explanation_bn": "সঠিক উত্তর: VERO (সত্য)। এই বক্তব্যে সাইনটিকে শহরের বাইরের সড়কে পাবলিক টেলিফোনের অবস্থান নির্দেশক বলা হয়েছে। “strade extraurbane” মানে শহরের বাইরের সড়ক।", "answer_it": "VERO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica la vicinanza di un negozio di telefonia mobile", "question_bn": "চিত্রে দেখানো সাইনটি মোবাইল ফোন বিক্রির দোকান কাছাকাছি আছে বলে নির্দেশ করে।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। “negozio di telefonia mobile” মানে মোবাইল ফোনের দোকান। পাবলিক টেলিফোনের সাইন মোবাইল বিক্রির দোকান নির্দেশ করে না; দুটো আলাদা সুবিধা।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica un posto di pronto soccorso raggiungibile per telefono", "question_bn": "চিত্রে দেখানো সাইনটি ফোনে যোগাযোগ করা যায় এমন একটি জরুরি চিকিৎসা কেন্দ্র নির্দেশ করে।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। “pronto soccorso” মানে জরুরি চিকিৎসা/প্রাথমিক জরুরি সেবা। পাবলিক টেলিফোনের সাইন জরুরি চিকিৎসাকেন্দ্র বোঝায় না; সাইনের বিষয় টেলিফোন ব্যবহারের সুবিধা।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica la possibilità di ricaricare i telefoni cellulari", "question_bn": "চিত্রে দেখানো সাইনটি মোবাইল ফোন রিচার্জ করার সুবিধা নির্দেশ করে।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। প্রশ্নটি মোবাইল ফোন রিচার্জ করার সুবিধার কথা বলছে। পাবলিক টেলিফোনের সাইন মানে নির্দিষ্ট পাবলিক ফোনের অবস্থান, মোবাইল রিচার্জ পরিষেবা নয়।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica che è vietato usare i telefoni cellulari", "question_bn": "চিত্রে দেখানো সাইনটি মোবাইল ফোন ব্যবহার নিষিদ্ধ বলে নির্দেশ করে।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। “è vietato usare” মানে ব্যবহার নিষিদ্ধ। পাবলিক টেলিফোনের অবস্থান-সংক্রান্ত সাইন মোবাইল ফোন ব্যবহারের নিষেধাজ্ঞা নির্দেশ করে না।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4277"}, {"question_it": "Il segnale raffigurato indica una zona sufficientemente coperta dal segnale per telefonia mobile", "question_bn": "চিত্রে দেখানো সাইনটি এমন এলাকা নির্দেশ করে যেখানে মোবাইল নেটওয়ার্কের কভারেজ যথেষ্ট ভালো।", "explanation_bn": "সঠিক উত্তর: FALSO (মিথ্যা)। প্রশ্নটি মোবাইল ফোন নেটওয়ার্কের কভারেজের কথা বলছে। পাবলিক টেলিফোনের সাইন এবং মোবাইল নেটওয়ার্ক কভারেজের তথ্য এক জিনিস নয়; এটি পাবলিক ফোনের সুবিধা নির্দেশ করে।", "answer_it": "FALSO", "topic": "Segnali di indicazione", "quiz_group": "4277"}];
+const BN_HELP_MAP = new Map(BN_HELP_BY_QUESTION.map(x=>[normaliseQuestion(x.question_it),x]));
+function normaliseQuestion(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,' ').trim().toLowerCase();}
+function addBengaliHelp(q){const h=BN_HELP_MAP.get(normaliseQuestion(q.question_it));if(h){q.question_bn=h.question_bn;q.explanation_bn=h.explanation_bn;q.translation_status='draft—verify';}else{q.question_bn='';q.explanation_bn='';q.translation_status='pending';}return q;}
+let chapters=[], current=[], idx=0, score=0, answered=false, attempted=0, wrong=[];
+const $=id=>document.getElementById(id);
+function topicName(t){return (t||'অন্যান্য').replace(/\s*-\s*$/,'').replace(/¿/g,'à').trim()}
+function init(){
+ const counts=new Map();
+ const firstSeen=new Map();
+ ALL_QUESTIONS.forEach(q=>{
+   let t=topicName(q.topic);
+   if(!firstSeen.has(t)) firstSeen.set(t,firstSeen.size);
+   counts.set(t,(counts.get(t)||0)+1);
+ });
+ // Preserve the official topic/chapter sequence from the repository JSON.
+ // Do not alphabetically sort labels: converted Italian slugs do not match
+ // the old display-name list and caused chapters to appear out of order.
+ chapters=[...counts.entries()].sort((a,b)=>firstSeen.get(a[0])-firstSeen.get(b[0]));
+ renderChapters();
+ if($('chapterSearch'))$('chapterSearch').addEventListener('input',renderChapters);
+ 
+}
+function renderChapters(){
+ const term=($('chapterSearch')?.value||'').trim().toLowerCase(), el=$('chapters');el.innerHTML='';
+ chapters.filter(([t])=>t.toLowerCase().includes(term)).forEach(([t,n])=>{
+  const b=document.createElement('button');b.className='topic-row';b.innerHTML=`<span>📘 ${escapeHtml(t)}</span><small>${n.toLocaleString('bn-BD')} প্রশ্ন →</small>`;b.onclick=()=>openChapter(t);el.appendChild(b)
+ });
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function showSection(id){['home','quizBank','quizView','featureView','examView','signsView'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo(0,0)}
+function openQuizBank(){showSection('quizBank');renderChapters()}
+function goHome(){showSection('home')}
+function openChapter(t){current=ALL_QUESTIONS.filter(q=>topicName(q.topic)===t);startQuiz(t)}
+function openAllQuiz(){current=[...ALL_QUESTIONS];startQuiz('সব অধ্যায়')}
+function startQuiz(name){idx=0;answered=false;$('quizMeta').textContent=`${name} • ${current.length.toLocaleString('bn-BD')}টি প্রশ্ন`;showSection('quizView');renderQuestion()}
+function renderQuestion(){
+ if(!current.length)return;
+ const q=current[idx];answered=false;
+ const qimg=$('questionImage'); if(qimg){qimg.innerHTML=''; if(q.image){const im=document.createElement('img');im.src=q.image;im.alt='Immagine della domanda';im.loading='lazy';im.style.cssText='max-width:100%;max-height:280px;object-fit:contain;border-radius:10px;background:#fff;padding:6px';im.onerror=()=>{qimg.innerHTML='';};qimg.appendChild(im);}}
+ $('quizMeta').textContent=`প্রশ্ন ${ (idx+1).toLocaleString('bn-BD')} / ${current.length.toLocaleString('bn-BD')} • আইডি ${q.id} • ${topicName(q.topic)}`;
+ $('quizProgress').style.width=((idx+1)/current.length*100)+'%';
+ $('question').textContent=q.question_it||'প্রশ্ন পাওয়া যায়নি';
+ $('translation').textContent=q.question_bn||'এই প্রশ্নের বাংলা অনুবাদ এখনো প্রস্তুত হয়নি।';
+  const eb=$('explanationBox'), et=$('explanationText'); if(eb&&et){et.textContent=q.explanation_bn||'এই প্রশ্নের বিস্তারিত বাংলা ব্যাখ্যা এখনো প্রস্তুত হয়নি। অনুবাদ/ব্যাখ্যা যাচাই না হওয়া পর্যন্ত অনুমানভিত্তিক তথ্য দেখানো হচ্ছে না।'; eb.style.borderLeft='4px solid '+(q.explanation_bn?'#4f9b72':'#777');}
+ $('feedback').classList.add('hidden');$('trueBtn').disabled=false;$('falseBtn').disabled=false;
+}
+function answer(v){if(answered||!current.length)return;answered=true;const q=current[idx];attempted++;const ok=(q.answer===v);if(ok)score++;else wrong.push(q.id);$('feedback').textContent=ok?'সঠিক উত্তর! '+(q.answer_it||''):'সঠিক উত্তর: '+(q.answer_it|| (q.answer?'VERO':'FALSO'));$('feedback').classList.remove('hidden');$('trueBtn').disabled=true;$('falseBtn').disabled=true;goHomeProgress()}
+function showAnswer(){if(!current.length)return;const q=current[idx];answered=true;$('feedback').textContent='সঠিক উত্তর: '+(q.answer_it|| (q.answer?'VERO':'FALSO'));$('feedback').classList.remove('hidden');$('trueBtn').disabled=true;$('falseBtn').disabled=true}
+function nextQuestion(){if(current.length){idx=(idx+1)%current.length;renderQuestion()}}
+function goHomeProgress(){}
+function openFeature(name,icon,desc){$('featureTitle').textContent=name;$('featureIcon').textContent=icon;$('featureDescription').textContent=desc;showSection('featureView')}
+
+// Official-style practice exam: 30 unique random questions, at least one from each of the 25 source topics.
+let examQuestions=[], examAnswers={}, examIndex=0, examSeconds=1200, examInterval=null, examFinished=false;
+function shuffleCopy(a){let x=[...a];for(let i=x.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
+function startExam(){
+ if(ALL_QUESTIONS.length<30){alert('পরীক্ষার জন্য পর্যাপ্ত প্রশ্ন পাওয়া যায়নি।');return}
+ clearInterval(examInterval);examAnswers={};examIndex=0;examSeconds=1200;examFinished=false;
+ const groups=new Map();ALL_QUESTIONS.forEach(q=>{const t=topicName(q.topic);if(!groups.has(t))groups.set(t,[]);groups.get(t).push(q)});
+ const order=['Definizioni stradali e di traffico','Segnali di pericolo','Segnali di divieto','Segnali di obbligo','Segnali di precedenza','Segnaletica orizzontale','Segnalazioni semaforiche','Segnali di indicazione','Segnali complementari','Pannelli integrativi','Limiti di velocità','Distanza di sicurezza','Norme sulla circol. dei veicoli','Esempi di precedenza','Norme sul sorpasso','Fermata, sosta','Ingombro della carreggiata','Uso delle luci','Dispositivi di equipaggiamento','Patenti di guida','Comportamenti per prevenire incidenti','Guida in relazione','Responsabilità civile','Limitazione dei consumi','Elementi costitutivi del veicolo'];
+ const selected=[];const used=new Set();
+ order.forEach(prefix=>{let matches=[...groups.entries()].filter(([t])=>t.toLowerCase().startsWith(prefix.toLowerCase()));let pool=matches.flatMap(([,qs])=>qs);if(pool.length){let q=shuffleCopy(pool)[0];if(!used.has(q.id)){selected.push(q);used.add(q.id)}}});
+ // If source topic naming differs, guarantee coverage for every distinct topic before filling to 30.
+ for(const [,qs] of groups){if(selected.length>=25)break;if(!selected.some(q=>q.topic===qs[0].topic)){let q=shuffleCopy(qs)[0];if(!used.has(q.id)){selected.push(q);used.add(q.id)}}}
+ const rest=shuffleCopy(ALL_QUESTIONS.filter(q=>!used.has(q.id))).slice(0,30-selected.length);examQuestions=shuffleCopy([...selected,...rest]).slice(0,30);
+ showSection('examView');$('examResult').classList.add('hidden');renderExam();examInterval=setInterval(()=>{if(examFinished)return;examSeconds--;if(examSeconds<=0){examSeconds=0;finishExam(true)}updateExamTimer()},1000);updateExamTimer();
+}
+function updateExamTimer(){let m=Math.floor(examSeconds/60),s=examSeconds%60;$('examTimer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');if(examSeconds<=60)$('examTimer').style.color='#b42318'}
+function renderExam(){if(!examQuestions.length)return;const q=examQuestions[examIndex];$('examItalian').textContent=q.question_it;$('examBangla').textContent=q.question_bn||'এই প্রশ্নের বাংলা অনুবাদ এখনো প্রস্তুত হয়নি।';
+  const ex=$('examExplanation'); if(ex){ex.style.display='block';ex.textContent='বাংলা ব্যাখ্যা: '+(q.explanation_bn||'এই প্রশ্নের বিস্তারিত ব্যাখ্যা এখনো প্রস্তুত হয়নি।');}$('examProgress').textContent=`প্রশ্ন ${examIndex+1} / ৩০`;
+ $('examImage').innerHTML='';if(q.image){let img=document.createElement('img');img.src=q.image;img.alt='প্রশ্নের চিত্র';img.style.cssText='max-width:100%;max-height:260px;object-fit:contain;margin:10px auto';img.onerror=()=>{img.remove();const note=document.createElement('div');note.textContent='এই প্রশ্নের ছবি এখনো ওয়েবসাইটে যুক্ত হয়নি';note.style.cssText='color:#777;font-size:14px;padding:12px;text-align:center';$('examImage').appendChild(note)};$('examImage').appendChild(img)}
+ for(let g=0;g<3;g++)$('group'+g).classList.toggle('active',Math.floor(examIndex/10)===g);
+ let nav=$('examNumbers');nav.innerHTML='';examQuestions.forEach((qq,i)=>{let b=document.createElement('button');b.textContent=i+1;b.className=(i===examIndex?'active ':'')+(examAnswers[qq.id]!==undefined?'done':'');b.onclick=()=>{examIndex=i;renderExam()};nav.appendChild(b)});
+ const buttons=$('examView').querySelectorAll('.exam-controls .answers button');buttons[0].style.outline=examAnswers[q.id]===true?'3px solid #3478d4':'';buttons[1].style.outline=examAnswers[q.id]===false?'3px solid #3478d4':'';
+}
+function jumpExamGroup(g){examIndex=g*10;renderExam()}
+function examAnswer(v){if(examFinished)return;examAnswers[examQuestions[examIndex].id]=v;renderExam()}
+function examMove(d){examIndex=Math.max(0,Math.min(29,examIndex+d));renderExam()}
+function finishExam(timeout){if(examFinished)return;examFinished=true;clearInterval(examInterval);let correct=0,answeredCount=0;examQuestions.forEach(q=>{if(examAnswers[q.id]!==undefined){answeredCount++;if(examAnswers[q.id]===q.answer)correct++}});$('examResult').classList.remove('hidden');$('examResult').innerHTML=`<h2>${timeout?'সময় শেষ!':'পরীক্ষা সম্পন্ন'}</h2><p>ফলাফল: <b>${correct} / ৩০</b></p><p>উত্তর দিয়েছ: ${answeredCount} / ৩০</p><p>${correct>=21?'ভালো হয়েছে—আরও অনুশীলন চালিয়ে যাও।':'আরও অনুশীলন করলে উন্নতি হবে।'}</p><button class="action primary" onclick="startExam()">নতুন পরীক্ষা শুরু (নতুন প্রশ্ন)</button><button class="action" style="margin-top:8px" onclick="goHome()">হোমপেজে ফিরে যাও</button>`;$('examResult').scrollIntoView({behavior:'smooth'});}
+
+
+const QUIZ_JSON_URL = 'https://raw.githubusercontent.com/Ed0ardo/QuizPatenteB/main/quizPatenteB2023.json';
+const SIGN_BASE_URL = 'https://raw.githubusercontent.com/Ed0ardo/QuizPatenteB/main';
+function slugLabel(slug){
+ return String(slug||'').replace(/[-_]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+}
+
+function openSigns(){
+ if(!ALL_QUESTIONS.length){alert('প্রশ্ন ও ছবি এখনো লোড হচ্ছে। একটু অপেক্ষা করো।');return}
+ showSection('signsView');renderSigns();
+}
+function renderSigns(){
+ const el=$('signGallery'); if(!el)return;
+ const term=($('signSearch')?.value||'').trim().toLowerCase();
+ const byImage=new Map();
+ ALL_QUESTIONS.forEach(q=>{
+   if(!q.image)return;
+   if(!byImage.has(q.image))byImage.set(q.image,{url:q.image,topic:q.topic,group:q.quiz_group,count:0,question:q.question_it});
+   byImage.get(q.image).count++;
+ });
+ const list=[...byImage.values()].filter(x=>(x.topic+' '+x.group+' '+x.question).toLowerCase().includes(term)).slice(0,300);
+ el.innerHTML='';
+ if(!list.length){el.innerHTML='<p class="muted">কোনো ছবি পাওয়া যায়নি।</p>';return}
+ list.forEach(x=>{
+   const b=document.createElement('button');b.className='card';b.style.cssText='min-height:150px;padding:10px;border-radius:14px';
+   const im=document.createElement('img');im.src=x.url;im.alt='Segnale stradale';im.loading='lazy';im.style.cssText='max-width:100%;height:100px;object-fit:contain;background:#fff;border-radius:8px;padding:4px';
+   im.onerror=()=>{im.style.display='none'};
+   const title=document.createElement('strong');title.textContent=slugLabel(x.group);
+   const count=document.createElement('span');count.textContent=x.count.toLocaleString('bn-BD')+'টি প্রশ্ন';
+   b.append(im,title,count);b.onclick=()=>{current=ALL_QUESTIONS.filter(q=>q.image===x.url);startQuiz('Cartello: '+slugLabel(x.group))};el.appendChild(b);
+ });
+ const note=document.createElement('p');note.className='muted';note.style.gridColumn='1/-1';note.textContent='প্রথম ৩০০টি অনন্য ছবি দেখানো হচ্ছে; সার্চ দিয়ে খুঁজতে পারো।';el.appendChild(note);
+}
+
+async function loadRepositoryQuiz(){
+ const status=document.createElement('div');
+ status.id='dataStatus';
+ status.className='muted';
+ status.style.cssText='margin:10px 0;padding:10px 12px;border:1px solid #3b3b42;border-radius:10px;background:#202022';
+ status.textContent='GitHub থেকে প্রশ্ন ও সাইন-ছবি লোড হচ্ছে…';
+ const main=document.querySelector('main');
+ const hero=main ? main.querySelector('.banner') : null;
+ if(hero) hero.insertAdjacentElement('afterend',status);
+ else if(main) main.insertBefore(status,main.firstChild);
+ try{
+   const response=await fetch(QUIZ_JSON_URL,{cache:'no-cache'});
+   if(!response.ok) throw new Error('HTTP '+response.status);
+   const source=await response.json();
+   const flattened=[];
+   let serial=0;
+   for(const [topicSlug, groups] of Object.entries(source)){
+     if(!groups || typeof groups!=='object') continue;
+     for(const [groupSlug, items] of Object.entries(groups)){
+       if(!Array.isArray(items)) continue;
+       items.forEach((q,i)=>{
+         serial++;
+         flattened.push(addBengaliHelp({
+           id:'repo-'+topicSlug+'-'+groupSlug+'-'+i,
+           question_it:String(q.q||''),
+           question_bn:'',
+           answer:!!q.a,
+           answer_it:q.a?'VERO':'FALSO',
+           topic:slugLabel(topicSlug),
+           quiz_group:groupSlug,
+           image:q.img ? SIGN_BASE_URL + (String(q.img).startsWith('/')?q.img:'/'+q.img) : '',
+           source:'Ed0ardo/QuizPatenteB',
+           translation_status:'pending'
+         }));
+       });
+     }
+   }
+   if(!flattened.length) throw new Error('JSON পাওয়া গেছে, কিন্তু প্রশ্নের গঠন চিনতে পারিনি');
+   ALL_QUESTIONS=flattened;
+   init();
+   const translated=flattened.filter(q=>q.question_bn).length;
+    status.textContent='লোড সম্পন্ন: '+flattened.length.toLocaleString('bn-BD')+'টি ইতালীয় প্রশ্ন। সাইন/ছবি GitHub থেকে লোড হবে। এই ডেমোতে '+translated.toLocaleString('bn-BD')+'টি প্রশ্নের বাংলা অনুবাদ ও ব্যাখ্যা যুক্ত আছে; অন্য প্রশ্নগুলোর কাজ বাকি।';
+ }catch(err){
+   status.textContent='প্রশ্নভান্ডার লোড করা যায়নি। ইন্টারনেট সংযোগ পরীক্ষা করুন এবং ওয়েবসাইটটি GitHub Pages/HTTPS-এ খুলুন। বিস্তারিত: '+err.message;
+   console.error('Quiz data load failed:',err);
+ }
+}
+
+loadRepositoryQuiz();
+</script></body></html>
